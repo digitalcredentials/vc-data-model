@@ -1,9 +1,9 @@
-# Example Isomorphic TS/JS Lib Template _(@digitalcredentials/isomorphic-lib-template)_
+# Verifiable Credentials Data Model _(@digitalcredentials/vc-data-model)_
 
-[![Build status](https://img.shields.io/github/workflow/status/digitalcredentials/isomorphic-lib-template/Node.js%20CI)](https://github.com/digitalcredentials/isomorphic-lib-template/actions?query=workflow%3A%22Node.js+CI%22)
-[![NPM Version](https://img.shields.io/npm/v/@digitalcredentials/isomorphic-lib-template.svg)](https://npm.im/@digitalcredentials/isomorphic-lib-template)
+[![Build status](https://img.shields.io/github/workflow/status/digitalcredentials/vc-data-model/Node.js%20CI)](https://github.com/digitalcredentials/vc-data-model/actions?query=workflow%3A%22Node.js+CI%22)
+[![NPM Version](https://img.shields.io/npm/v/@digitalcredentials/vc-data-model.svg)](https://npm.im/@digitalcredentials/vc-data-model)
 
-> A Typescript/Javascript isomorphic library template, for use in the browser, Node.js, and React Native.
+> Typescript types for the W3C Verifiable Credentials Data Model.
 
 ## Table of Contents
 
@@ -16,7 +16,8 @@
 
 ## Background
 
-TBD
+See [W3C Verifiable Credentials Data Model](https://www.w3.org/TR/vc-data-model/)
+specification.
 
 ## Security
 
@@ -24,14 +25,14 @@ TBD
 
 ## Install
 
-- Node.js 14+ is recommended.
+- Node.js 16+ is recommended.
 
 ### NPM
 
 To install via NPM:
 
 ```
-npm install @digitalcredentials/isomorphic-lib-template
+npm install @digitalcredentials/vc-data-model
 ```
 
 ### Development
@@ -39,14 +40,19 @@ npm install @digitalcredentials/isomorphic-lib-template
 To install locally (for development):
 
 ```
-git clone https://github.com/digitalcredentials/isomorphic-lib-template.git
-cd isomorphic-lib-template
+git clone https://github.com/digitalcredentials/vc-data-model.git
+cd vc-data-model
 npm install
 ```
 
 ## Usage
 
-TBD
+```ts
+import { VerifiableCredential, VerifiablePresentation } from '@digitalcredentials/vc-data-model'
+
+// for example, in an Express route definition:
+const vp = req.body.presentation as VerifiablePresentation
+```
 
 ## Contribute
 

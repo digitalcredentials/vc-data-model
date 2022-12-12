@@ -34,6 +34,28 @@ Inspired by / incorporates elements of other VC Typescript libraries:
 * https://github.com/learningeconomy/LearnCard (`/packages/learn-card-core/src/types/`)
 * Existing type definitions in DCC libraries (in `learner-credential-wallet` and others)
 
+### Versioning
+
+The version numbers of this npm module are meant to mirror the version numbers
+of the Verifiable Credentials Data Model specification. Developers are encouraged
+to specify which VC Data model version they're using. For example, currently,
+the VC DM 1.1 is the stable version:
+
+```
+"dependencies": {
+   "@digitalcredentials/vc-data-model": "^1.1.0"
+}
+```
+
+However, the VC DM 2.0 Working group is currently developing the second version
+of the specification (which will likely make breaking changes). So, in the future:
+
+```
+"dependencies": {
+   "@digitalcredentials/vc-data-model": "^2.0.0"
+}
+```
+
 ## Install
 
 - Node.js 16+ is recommended.

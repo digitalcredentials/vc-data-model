@@ -8,7 +8,6 @@
 ## Table of Contents
 
 - [Background](#background)
-- [Security](#security)
 - [Install](#install)
 - [Usage](#usage)
 - [Contribute](#contribute)
@@ -16,12 +15,24 @@
 
 ## Background
 
+If you're implementing the Verifiable Credential specification in Typescript,
+chances are that you're using a type definition for VerifiableCredentials
+and VerifiablePresentations. Many VC-related projects (Sphereon's Veramo, 
+LEF's LearnCard, Transmute's Verifiable Data) include the type definitions in
+their monorepos.
+
+We saw a niche for a standalone library that exported just the type definitions,
+hence this repository.
+
 See [W3C Verifiable Credentials Data Model](https://www.w3.org/TR/vc-data-model/)
 specification.
 
-## Security
+Inspired by / incorporates elements of other VC Typescript libraries:
 
-TBD
+* https://github.com/Sphereon-Opensource/veramo (`/packages/core/src/types/vc-data-model.ts`)
+* https://github.com/transmute-industries/verifiable-data (`/packages/vc.js/src/types/`)
+* https://github.com/learningeconomy/LearnCard (`/packages/learn-card-core/src/types/`)
+* Existing type definitions in DCC libraries (in `learner-credential-wallet` and others)
 
 ## Install
 

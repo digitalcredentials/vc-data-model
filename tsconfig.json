@@ -19,6 +19,6 @@
     "karma.conf.js",
     "types"
   ],
-  "exclude": ["test", "node_modules", "dist"]
+  "exclude": ["test", "node_modules", "dist", "types"]
 }
 

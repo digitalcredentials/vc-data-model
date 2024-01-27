@@ -1,5 +1,5 @@
 /*!
- * Copyright (c) 2022 Digital Credentials Consortium. All rights reserved.
+ * Copyright (c) 2022-2024 Digital Credentials Consortium. All rights reserved.
  */
 export type Type = string | string[]
 
@@ -21,11 +21,13 @@ export interface LinkedDataObject {
 export interface IssuerObject extends LinkedDataObject {
   id: string
   url?: string
+  name?: string;
+  image?: string | ImageObject;
 
   [x: string]: any
 }
 
-export type VerifiableCredential = VCDIVerifiableCredential | CompactJWT
+export type VerifiableCredential = VerifiableCredentialDataModelV1 | CompactJWT
 
 // Represents a Json Web Token in compact form: "header.payload.signature"
 export type CompactJWT = string
@@ -33,7 +35,7 @@ export type CompactJWT = string
 // Represents a Verifiable Credential protected by
 //   the Verifiable Credential Data Integrity 1.0 spec
 // @see https://www.w3.org/TR/vc-data-integrity/
-export interface VCDIVerifiableCredential extends LinkedDataObject {
+export interface VerifiableCredentialDataModelV1 extends LinkedDataObject {
   // The first element of the @context array must be the VC context itself
   // Subsequent elements are either URLs for other contexts OR
   // inline context objects.
@@ -50,10 +52,16 @@ export interface VCDIVerifiableCredential extends LinkedDataObject {
   issuer: string | IssuerObject
 
   // https://w3c.github.io/vc-data-model/#issuance-date
+  // http://www.w3.org/2001/XMLSchema#dateTime
   issuanceDate: string
+  // alias of issuanceDate. VC DM v2 spec replaces issuanceDate with validFrom
+  validFrom?: string
 
   // https://w3c.github.io/vc-data-model/#expiration
+  // http://www.w3.org/2001/XMLSchema#dateTime
   expirationDate?: string
+  // alias of expirationDate. VC DM v2 spec replaces expirationDate with expirationDate
+  validUntil?: string
 
   // https://w3c.github.io/vc-data-model/#credential-subject
   credentialSubject: CredentialSubject
@@ -68,16 +76,18 @@ export interface VCDIVerifiableCredential extends LinkedDataObject {
   evidence?: Evidence | Evidence[]
 
   // https://w3c.github.io/vc-data-model/#refreshing
-  refreshService?: RefreshService
+  refreshService?: RefreshService | RefreshService[]
 
   // https://w3c.github.io/vc-data-model/#terms-of-use
-  termsOfUse?: any
+  termsOfUse?: LinkedDataObject | LinkedDataObject[]
+
+  renderMethod?: LinkedDataObject | LinkedDataObject[]
 
   // For W3C Linked Data Integrity-protected VCs, a 'proof' is required
   // However, for JWT-protected VCs, 'proof' is optional (is external)
   // @see https://w3c-ccg.github.io/ld-cryptosuite-registry/
   // for examples of cryptographic suites used for VC proofs
-  proof?: any
+  proof?: LinkedDataObject | LinkedDataObject[]
 
   // Implementers are free to add any other properties to a VC
   [x: string]: any

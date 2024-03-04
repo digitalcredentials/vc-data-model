@@ -1,7 +1,7 @@
 {
   "name": "@digitalcredentials/vc-data-model",
   "description": "Typescript types for the W3C Verifiable Credentials Data Model.",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "scripts": {
     "build": "npm run clear && tsc -d && tsc -p tsconfig.json",
     "clear": "rimraf dist/*",

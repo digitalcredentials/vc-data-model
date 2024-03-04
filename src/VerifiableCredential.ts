@@ -97,6 +97,7 @@ export interface VCDIVerifiableCredential extends LinkedDataObject {
 export interface CredentialSubject extends LinkedDataObject {
   // although a VC is required to have a `credentialSubject` property,
   // the spec does not require any properties inside it.
+  [x: string]: any;
 }
 
 // https://w3c.github.io/vc-data-model/#status

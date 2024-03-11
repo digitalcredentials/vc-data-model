@@ -60,7 +60,7 @@ export interface VCDIVerifiableCredential extends LinkedDataObject {
   credentialSubject: CredentialSubject | CredentialSubject[];
 
   // https://w3c.github.io/vc-data-model/#status
-  credentialStatus?: CredentialStatus;
+  credentialStatus?: CredentialStatus | CredentialStatus[];
 
   // https://w3c.github.io/vc-data-model/#data-schemas
   credentialSchema?: CredentialSchema | CredentialSchema[];

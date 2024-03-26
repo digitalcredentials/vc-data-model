@@ -66,7 +66,7 @@ export interface VCDIVerifiableCredential extends LinkedDataObject {
   credentialSchema?: CredentialSchema | CredentialSchema[];
 
   // https://w3c.github.io/vc-data-model/#integrity-of-related-resources
-  relatedResource?: RelatedResource[];
+  relatedResource?: RelatedResource | RelatedResource[];
 
   // https://w3c.github.io/vc-data-model/#evidence
   evidence?: Evidence | Evidence[];
